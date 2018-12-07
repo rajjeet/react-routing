@@ -23,8 +23,9 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
+                    query: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: ['@babel/plugin-proposal-class-properties']
                     }
                 }
             },
@@ -34,9 +35,7 @@ module.exports = {
             },
             {
                 test: /\.(png|ttf|otf|eot|svg|woff|woff2)$/,
-                use: {
-                    loader: "file-loader"
-                }
+                use: ["file-loader"]
             }
         ]
     },
@@ -46,7 +45,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-        })
+        }),
+
     ]
 
 };

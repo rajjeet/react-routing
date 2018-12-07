@@ -5,9 +5,21 @@ import App from './App';
 import 'semantic-ui-css/semantic.min.css';
 import './assets/css/styles.css';
 
-ReactDOM.render(
+
+const AppContainer = (
     <Router>
-        <App />
+        <App/>
     </Router>
-    , document.getElementById('root')
 );
+
+if (module.hot) {
+    module.hot.accept("./App", () => {
+        const NextApp = require('./App').default;
+        ReactDOM.render(<NextApp/>, document.getElementById('root'));
+    });
+}
+
+
+ReactDOM.render(AppContainer, document.getElementById('root'));
+
+
