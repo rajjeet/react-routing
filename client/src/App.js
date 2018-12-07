@@ -2,7 +2,7 @@ import React from "react";
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import {Container, Grid, Divider, Segment} from "semantic-ui-react";
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 export function Home({content}) {
     return <Segment>{content}</Segment>;
