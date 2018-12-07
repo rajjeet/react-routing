@@ -12,7 +12,6 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 9000,
-        open: true,
         hot: true
 
     },
@@ -31,12 +30,23 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|ttf|otf|eot|svg|woff|woff2)$/,
+                use: {
+                    loader: "file-loader"
+                }
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({template: "./client/src/index.html"}),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
     ]
+
 };
