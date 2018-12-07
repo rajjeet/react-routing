@@ -9,6 +9,7 @@ import PrivateHome from "./components/private/PrivateHome";
 import PrivateRoute from "./components/private/PrivateRoute";
 import Login from "./components/private/Login";
 import Logout from "./components/private/Logout";
+import SmartColor from "./components/SmartColor";
 
 const Home = ({content}) => (
     <Segment>{content}</Segment>
@@ -22,7 +23,8 @@ const Sidebar = () => (
         <Menu.Item exact as={NavLink} to={"/props"} name='propsViewer'/>
         <Menu.Item exact as={NavLink} to={"/logging"} name='logging'/>
         <Menu.Item exact as={NavLink} to={"/private"} name='private'/>
-        <Menu.Item exact as={NavLink} to={"/dum"} name='dum'/>
+        <Menu.Item exact as={NavLink} to={"/smart-color/green/HelloWorld"} name='smart-color'/>
+        <Menu.Item exact as={NavLink} to={"/not-found"} name='not-found'/>
     </Menu>
 );
 
@@ -47,6 +49,7 @@ const App = () => (
                             <Route exact path={"/logout"} component={Logout} />
                             <Route path={"/logging"} component={LoggingHome} />
                             <PrivateRoute path={"/private"} component={PrivateHome} />
+                            <PrivateRoute path={"/smart-color/:color/:text"} component={SmartColor} />
                             <Route render={() => <div>Not Found! :(</div>} />
                         </Switch>
                     </Grid.Column>
