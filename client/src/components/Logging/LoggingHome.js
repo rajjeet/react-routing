@@ -1,7 +1,9 @@
 import React from "react";
 import {Route, withRouter} from "react-router-dom";
 import {Container, Divider, Header} from "semantic-ui-react";
-import LoggingLink from "./LoggingLink";
+import LoggingLink from "./LoggingLink"
+import LoggingRoute from './LoggingRoute';
+import Lorem from "./Lorem";
 
 function DefaultLoggingMessage() {
     return <Container>
@@ -24,7 +26,8 @@ const LoggingHome = ({match}) => (
         <LoggingLink to={`${match.url}/logging-detail/2`}>Link 2</LoggingLink>
         <Divider/>
 
-        <Route exact path={`${match.url}`} component={DefaultLoggingMessage} />
+        <LoggingRoute exact path={`${match.url}/logging-detail/:id`} component={Lorem}/>
+        <Route exact path={`${match.url}`} component={DefaultLoggingMessage}/>
     </div>
 );
 
