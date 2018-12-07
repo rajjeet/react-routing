@@ -1,0 +1,30 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Raj",
+      "occupation": "Software Developer"
+    },
+    {
+      "id": 2,
+      "name": "Ruby",
+      "occupation": "Rating Analyst"
+    },
+    {
+      "id": 3,
+      "name": "Jasmine",
+      "occupation": "Student"
+    },
+    {
+      "id": 4,
+      "name": "Jassie",
+      "occupation": "Coordinator"
+    },
+    {
+      "id": 5,
+      "name": "Jatty",
+      "occupation": "Real Estate Agent"
+    }
+  ]
+}
+

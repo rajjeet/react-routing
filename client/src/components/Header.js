@@ -3,7 +3,7 @@ import {Segment} from "semantic-ui-react";
 
 const Header = () => (
     <Segment>
-        <h1>Header</h1>
+        <h1>React Routing</h1>
     </Segment>
 );
 

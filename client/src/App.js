@@ -10,6 +10,8 @@ import PrivateRoute from "./components/private/PrivateRoute";
 import Login from "./components/private/Login";
 import Logout from "./components/private/Logout";
 import SmartColor from "./components/SmartColor";
+import People from "./components/People";
+import PersonProfile from "./components/PersonProfile";
 
 const Home = ({content}) => (
     <Segment>{content}</Segment>
@@ -22,6 +24,7 @@ const Sidebar = () => (
         <Menu.Item exact as={NavLink} to={"/prompt"} name='prompt'/>
         <Menu.Item exact as={NavLink} to={"/props"} name='propsViewer'/>
         <Menu.Item exact as={NavLink} to={"/logging"} name='logging'/>
+        <Menu.Item exact as={NavLink} to={"/people"} name='people'/>
         <Menu.Item exact as={NavLink} to={"/private"} name='private'/>
         <Menu.Item exact as={NavLink} to={"/smart-color/green/HelloWorld"} name='smart-color'/>
         <Menu.Item exact as={NavLink} to={"/not-found"} name='not-found'/>
@@ -48,6 +51,8 @@ const App = () => (
                             <Route exact path={"/login"} component={Login} />
                             <Route exact path={"/logout"} component={Logout} />
                             <Route path={"/logging"} component={LoggingHome} />
+                            <Route exact path={"/people"} component={People} />
+                            <Route path={"/people/:id"} component={PersonProfile} />
                             <PrivateRoute path={"/private"} component={PrivateHome} />
                             <PrivateRoute path={"/smart-color/:color/:text"} component={SmartColor} />
                             <Route render={() => <div>Not Found! :(</div>} />
