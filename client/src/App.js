@@ -5,6 +5,10 @@ import LoggingHome from './components/Logging/LoggingHome';
 import FormExampleForm from './components/FormExampleForm';
 import {Container, Grid, Divider, Segment, Menu} from "semantic-ui-react";
 import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom';
+import PrivateHome from "./components/private/PrivateHome";
+import PrivateRoute from "./components/private/PrivateRoute";
+import Login from "./components/private/Login";
+import Logout from "./components/private/Logout";
 
 const Home = ({content}) => (
     <Segment>{content}</Segment>
@@ -17,6 +21,7 @@ const Sidebar = () => (
         <Menu.Item exact as={NavLink} to={"/prompt"} name='prompt'/>
         <Menu.Item exact as={NavLink} to={"/props"} name='propsViewer'/>
         <Menu.Item exact as={NavLink} to={"/logging"} name='logging'/>
+        <Menu.Item exact as={NavLink} to={"/private"} name='private'/>
         <Menu.Item exact as={NavLink} to={"/dum"} name='dum'/>
     </Menu>
 );
@@ -38,7 +43,10 @@ const App = () => (
                             <Route exact path={"/foo"} render={() => <Home content={"FOOOFOOOO"} />} />
                             <Route exact path={"/prompt"} component={FormExampleForm} />} />
                             <Route exact path={"/props"} render={({location}) => <PropView jsonObj={location} />} />
+                            <Route exact path={"/login"} component={Login} />
+                            <Route exact path={"/logout"} component={Logout} />
                             <Route path={"/logging"} component={LoggingHome} />
+                            <PrivateRoute path={"/private"} component={PrivateHome} />
                             <Route render={() => <div>Not Found! :(</div>} />
                         </Switch>
                     </Grid.Column>
