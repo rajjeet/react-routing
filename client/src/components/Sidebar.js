@@ -11,6 +11,8 @@ const Sidebar = () => (
 
         <Menu.Item exact as={NavLink} to={"/prompt"} name='prompt'/>
 
+        <Menu.Item exact as={NavLink} to={"/props"} name='propsViewer'/>
+
         <Menu.Item exact as={NavLink} to={"/dum"} name='dum'/>
 
     </Menu>
